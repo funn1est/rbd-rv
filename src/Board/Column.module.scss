@@ -1,0 +1,61 @@
+@import 'styles/mixins';
+
+.column-wrapper {
+  background-color: lightgray;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .column-title {
+    height: 36px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: lightcoral;
+    @include flexCenter;
+    flex-shrink: 0;
+  }
+
+  .scroll-wrapper {
+    flex: 1;
+    background-color: lightgray;
+    margin-top: 16px;
+
+    .scroll-list {
+      @include scrollbar;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .card-wrapper {
+    }
+  }
+}
+
+.card {
+  @include flexBothCenter;
+  background-color: white;
+  border-radius: 8px;
+  width: 284px;
+  margin-left: 8px;
+}
+
+.card-content {
+  position: relative;
+  width: 284px;
+  .card-styles {
+    position: relative;
+    overflow: hidden;
+
+    @include flexBothCenter;
+    background-color: white;
+    border-radius: 8px;
+    width: 284px;
+  }
+}
